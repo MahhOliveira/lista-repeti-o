@@ -1,0 +1,32 @@
+# lista-repeti-o
+01 /* FaÃ§a um programa que leia um nÃºmero inteiro positivo N e imprima todos os nÃºmeros naturais de 0 atÃ© N em ordem 
+crescente. */
+#include <stdio.h>
+
+int main(){
+    int i, num;
+
+    printf("Digite o valor de n: ");
+    scanf("%d", &num);
+
+    for(i = 0; i <= num; i++){
+        printf("%d\n", i);
+    }
+
+}
+
+02 /* FaÃ§a um programa que leia um nÃºmero inteiro positivo N
+ e imprima todos os nÃºmeros naturais de 0 atÃ© N em ordem decrescente. */
+
+#include <stdio.h>
+
+int main(){
+    int i, num;
+
+    printf("Por favor, digite um valor para N: ");
+    scanf("%d", &num);
+
+    for(i = num; i >= 0; i--)
+        printf("%d\n", i);
+
+}
