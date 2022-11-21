@@ -1,0 +1,565 @@
+03 /* FaÃ§a um programa que leia um nÃºmero inteiro N e depois 
+imprima os N primeiros nÃºmeros naturais Ã­mpares (sem usar comando condicional). */
+#include <stdio.h>
+
+int main(){
+    int i, num;
+
+    printf("Digite um valor para comecar: ");
+    scanf("%d", &num);
+
+    for (i = 1; i <= num; i = i + 2)
+    {
+        printf("%d\n", i);
+    }
+    
+
+}
+04 /* FaÃ§a um programa que determine e mostre os cinco primeiros mÃºltiplos de 3 
+considerando nÃºmeros maiores que 0. */
+#include <stdio.h>
+
+int main(){
+    int i;
+
+    for(i = 1; i <= 5; i++)
+        printf("%d x 3 = %d\n", i, i * 3);
+
+
+}
+05 /* FaÃ§a um programa que calcule e mostre a soma dos 50 primeiros nÃºmeros pares */
+#include <stdio.h>
+
+int main(){
+    int i, soma = 0;
+
+    for(i = 0; i <= 100; i = i + 2){
+        printf("%d\n", i);
+        soma = i + soma;
+    }
+    printf("\nSoma: %d", soma);
+
+
+}
+06/* FaÃ§a um programa que mostre uma contagem regressiva na tela, iniciando em 10 e
+terminando em 0. Mostre uma mensagem â€œFIM!â€ apÃ³s a contagem. */
+#include <stdio.h>
+
+int main(){
+    int i;
+
+    for(i = 10; i >= 0; i--){
+        printf("%d\n", i);
+    }
+
+    printf("Fim!");
+
+
+}
+/* Elabore um programa que peÃ§a ao usuÃ¡rio para digitar 10 valores. Some esses valores e
+apresente o resultado na tela. */
+#include <stdio.h>
+
+int main(){
+    int i, val, soma = 0;
+
+    for(i = 1; i <=10; i++){
+        printf("Por favor digite o %dÂº numero a ser somado: ", i);
+        scanf("%d", &val);
+        soma = val + soma;
+    }
+    printf("Soma: %d", soma);
+
+
+}
+/* FaÃ§a um programa que leia 10 inteiros e imprima sua mÃ©dia. */
+#include <stdio.h>
+
+int main(){
+    int i, val, media = 1, calc = 0;
+
+    for(i = 1; i <= 10; i++){
+        printf("Digite o %dÂº numero a ser calculado: ", i);
+        scanf("%d", &val);
+        calc = val + calc;
+        media = calc / 10;
+    }
+    printf("Soma: %d\nMedia: %d", calc, media);
+
+
+}
+/* Escreva um programa que leia 10 nÃºmeros e escreva o menor valor lido e o maior valor
+lido. */
+#include <stdio.h>
+
+int main(){
+    int i, num, menorNum, maiorNum;
+
+        scanf("%d", &num);
+        menorNum = num;
+        maiorNum = num;
+
+    for(i = 2; i <=10; i++){
+        scanf("%d", &num);
+
+        if(menorNum > num)
+            menorNum = num;
+        else if(maiorNum < num)
+            maiorNum = num;
+    }
+    printf("Menor numero digitado: %d\n", menorNum);
+    printf("Maior numero digitado: %d", maiorNum);
+
+}
+/* FaÃ§a um programa que leia 10 inteiros positivos, ignorando nÃ£o positivos, e imprima sua
+mÃ©dia. */
+#include <stdio.h>
+
+int main(){
+    int i, num, calc = 0, media;
+
+    for(i = 1; i <=10;){
+    printf("Digite o %dÂº numero positivo: ", i);
+    scanf("%d", &num);
+
+    if(num > 0){
+        calc = num + calc;
+        media = calc / 10;
+        i++;
+    } else{
+        printf("Esse numero e negativo!\n");
+    }
+    }
+    printf("\nMedia: %d", media);
+
+}
+/*FaÃ§a um algoritmo que leia um nÃºmero positivo e imprima seus divisores. Exemplo: Os
+divisores do nÃºmero 66 sÃ£o: 1, 2, 3, 6, 11, 22, 33 e 66.*/
+#include <stdio.h>
+
+int main(){
+    int i, j, num, resultado = 0;
+
+    printf("Digite o numero a ser calculado: ");
+    scanf("%d", &num);
+
+    for(i = 1; i <= num; i++)
+    if(num % i == 0){
+        printf("%d\n", i);
+    }
+
+    for(j = 2; j <= num/2; j++){
+    if(num % j == 0){
+    resultado++;
+    break;
+    }
+    }
+    if(resultado == 0)
+    printf("\nO numero %d eh primo!", num);
+}
+/* FaÃ§a um programa que exiba a soma de todos os nÃºmeros naturais abaixo de 1.000 que sÃ£o
+mÃºltiplos de 3 ou 5. */
+#include <stdio.h>
+
+int main(){
+    int i, soma = 0;
+
+    for(i = 1000; i >= 0; i--){
+        if(i % 3 == 0 && i % 5 != 0){
+        printf("%d - m3\n", i);
+        soma = soma + i;
+        }
+        else if(i % 5 == 0){
+        printf("%d - m5\n", i);
+        soma = soma + i;
+        }
+    }
+        printf("Soma: %d", soma);
+
+
+
+}
+/*Escreva um programa que leia um nÃºmero inteiro, maior ou igual a zero, do usuÃ¡rio.
+Imprima o enÃ©simo termo da sequÃªncia de Fibonacci. Essa sequÃªncia comeÃ§a no termo de ordem zero, e, 
+a partir do segundo termo, seu valor Ã© dado pela soma dos dois termos anteriores. Alguns termos dessa 
+sequÃªncia sÃ£o: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.*/
+#include <stdio.h>
+
+int main(){
+    int i, num, soma, a, b, c;
+
+    a = 0;
+    b = 1;
+    soma = 0;
+
+
+    printf("Digite a posicao do numero na sequencia: ");
+    scanf("%d", &num);
+
+    if(num <= 0){
+        printf("Erro, encerrando...");
+        return 0;
+    }
+
+    printf("%d ", a);
+
+    for(i = 3; i <= num; i++){
+        soma = a + b;
+        a = b;
+        b = soma;
+
+        if(soma == 1){
+            printf("%d ", soma);
+        }
+
+        printf("%d ", soma);
+    }
+        printf("\nA %dÂª posicao na sequencia de fibonacci corresponde a: %d\n", num, soma);
+
+
+}
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <locale.h>
+
+main() {
+
+    setlocale(LC_ALL, "Portuguese");
+
+    int a, b, auxiliar, i, n;
+
+    a = 0;
+    b = 1;
+
+    printf("Digite um nÃºmero: ");
+    scanf("%d", &n);
+    printf("\nSÃ©rie de Fibonacci:\n\n");
+    printf("%d\n", a);
+
+    for(i = 1; i <= n; i++) {
+
+        auxiliar = a + b;
+        a = b;
+        b = auxiliar;
+
+        printf("%d\n", auxiliar);
+    }
+}
+
+
+
+*/
+
+14/*Elabore um programa que faÃ§a a leitura de vÃ¡rios nÃºmeros inteiros atÃ© que se digite um nÃºmero negativo. 
+O programa tem de retornar o maior e o menor nÃºmero lido.*/
+#include <stdio.h>
+
+int main(){
+    int maior, menor, valor;
+
+    printf("Digite um valor: ");
+    scanf("%d", &valor);
+    
+    menor = valor;
+    maior = valor;
+
+    while(valor > 0){
+        printf("Digite outro valor: ");
+        scanf("%d", &valor);
+
+        if(valor < menor)
+            menor = valor;
+        else if(valor > maior)
+            maior = valor;
+
+    }
+    printf("Leitura finalizada!\nMenor valor digitado: %d\nMaior valor digitado: %d", menor, maior);
+
+}
+stdio.h>
+
+int main(){
+    int num;
+    float i, somacalc, calc = 0;
+    char opt;
+
+    do{
+    printf("Digite o numero a ser calculado: ");
+    scanf("%d", &num);
+
+    for(i = 1; i <= num; i++){
+        somacalc = 1/i;
+        calc = calc + somacalc;
+        printf("1/%.0f\t", i);
+    }
+        printf("\nHn = %.2f", calc);
+        printf("\nDeseja encerrar o programa? (y ou n)\n");
+        scanf(" %c", &opt);
+    } while(opt == 'n' || opt == 'N');
+
+}
+/*Escreva um programa que leia um nÃºmero inteiro 
+positivo N e em seguida imprima N linhas do chamado triÃ¢ngulo de Floyd:*/
+#include <stdio.h>
+
+int main(){
+	int i, j=1, n;
+
+    printf("Digite o numero: ");
+	scanf("%d", &n);
+    
+    for (i=1; i<=(n*(n+1))/2; i++){
+        printf("%d ",i);
+        if(i==(j*(j+1))/2){
+            printf("\n");
+            j++;
+        }
+    }
+}
+
+/*int main(){
+    int i, num;
+
+    printf("Digite o numero: ");
+    scanf("%d",&num);
+
+    for(i = 1; i <= num; i++){
+        printf("%d\n", );
+
+    }
+
+
+
+}*/
+/*FaÃ§a um programa que receba um nÃºmero inteiro maior do que 1 e verifique se o nÃºmero fornecido Ã© primo ou nÃ£o.*/
+#include <stdio.h>
+
+int main(){
+    int i, num, primo = 0;
+    char op;
+
+    do{
+    printf("\nDigite o numero a ser lido: ");
+    scanf("%d", &num);
+
+    for(i = 1; i <= num; i++){
+        if(num % i == 0){
+            primo++;
+        }
+    }
+    if(primo == 2){
+        printf("\nO numero %d e primo!\n", num);
+        primo = 0;
+    }else if(primo != 2){
+        printf("\nO numero %d nao e primo!\n", num);
+        primo = 0;
+    }
+        printf("Pressione R para repetir o programa!\n");
+        scanf(" %c", &op);
+    }while(op == 'r' || op == 'R');
+}
+/*FaÃ§a um programa que calcule e escreva o valor de S:*/
+#include <stdio.h>
+
+int main(){
+    int i;
+    float somaOperacao = 0, x = 1, y = 1, operacao;
+
+    for (i=1; i <= 55; i++){
+        operacao = x/y;
+        somaOperacao = somaOperacao + operacao;
+        
+        if(i < 55)
+           printf("%d/%d + ", (int)x, (int)y);
+        else if(i == 55)
+            printf("%d/%d\n", (int)x, (int)y);
+        
+        x = x + 2;
+        y++;
+    }
+
+    printf("S = %.2f", somaOperacao);
+}
+/*Elabore um algoritmo que permita ao usuÃ¡rio realizar a compra de frutas. Assim, apresente a lista de frutas 
+disponÃ­veis, abaixo, com seus respectivos valores. O algoritmo deve permitir ao usuÃ¡rio retomar o menu frutas 
+quantas vezes quiser, e solicitar a quantidade de frutas. Ao final, apresente o valor total da compra.*/
+#include <stdio.h>
+#define ABAC 5.00
+#define MACA 1.00
+#define PERA 4.00
+
+int main(){
+    int opcMenu, fruta, quantAbac, quantMaca;
+    float total = 0;
+    char voltar = 'r';
+
+    printf("Bem-Vindo(a) a sua compra de frutas\n");
+    printf("Digite 1 para comecar\n");
+    scanf("%d", &opcMenu);
+
+    if(opcMenu == 1){
+        while(voltar == 'R' || voltar == 'r'){
+            printf("\nSelecione as frutas abaixo:\n");
+            printf("1. Abacaxi (R$ %.2f)\n", ABAC);
+            printf("2. Maca (R$ %.2f)\n", MACA);
+            printf("3. Pera (R$ %.2f)\n", PERA);
+            printf("\nTotal: R$%.2f\n", total);
+            printf("Digite 0 para encerrar\n");
+            scanf("%d", &fruta);
+            switch(fruta){
+                case 0:
+                        voltar = 's';
+                        break;
+
+                case 1:
+                        printf("\nSelecionado: Abacaxi (R$ %.2f)\n", ABAC);
+                        printf("digite a quantidade que deseja comprar (0 para voltar): ");
+                        scanf("%d", &quantAbac);
+
+                        total = total + (quantAbac * ABAC);
+
+                        break;
+                case 2:
+                        printf("\nSelecionado: Maca (R$ %.2f)\n", MACA);
+                        printf("digite a quantidade que deseja comprar (0 para voltar): ");
+                        scanf("%d", &quantMaca);
+
+                        total = total + (quantMaca * MACA);
+                        break;
+                case 3:
+                        printf("\nSelecionado: Pera (R$ %.2f)\n", PERA);
+                        printf("digite a quantidade que deseja comprar (0 para voltar): ");
+                        scanf("%d", &quantMaca);
+
+                        total = total + (quantMaca * PERA);
+                        break;
+
+
+                default:
+                printf("Opcao invalida, digite R para retornar: ");
+                scanf(" %c", &voltar);
+            }
+
+
+        }
+    printf("-------------==-------------\nPrograma encerrado\nSeu Total: R$%.2f", total);
+    } else
+    printf("-------------==-------------\nPrograma encerrado\nSeu Total: R$%.2f", total);
+
+    
+    /*switch(opcMenu){
+        case 1:
+            printf("Selecione as frutas abaixo:\n");
+            printf("1. Abacaxi (R$ 5,00)\n");
+            printf("2. Maca (R$ 1,00)\n");
+            printf("3. Pera (R$ 4,00)\n");
+            scanf("%d", &fruta);
+                switch(fruta){
+                    case 1:
+                        printf("Selecionado: Abacaxi (R$ 5,00)\n");
+                        printf("digite a quantidade que deseja comprar: ");
+                        scanf("%d", &quantAbac);
+
+                        total = quantAbac + total;
+
+                    default:
+                        printf("Erro: opcao invalida!");
+                        break;
+                }
+
+        break;
+
+        default:
+            printf("Desligando o sistema...");
+            break;
+    }*/
+}
+
+/*
+    menu inicial - aperte 1 para iniciar
+    frutas - pressione tal para escolher tal fruta
+    fruta selecionada - escolha a quantidade -> confirmar - total
+    voltar para o menu
+
+*/
+/*Uma pesquisa sobre algumas caracterÃ­sticas fÃ­sicas da populaÃ§Ã£o de uma determinada regiÃ£o coletou os seguintes 
+dados, referentes a cada habitante:
+a) sexo (m e f);
+b) cor dos olhos (a (azuis), v (verdes), c (castanhos), p (pretos));
+c) cor dos cabelos (l (loiros), c (castanhos), p (pretos), r (ruivos)); d) idade em anos.
+d) idade em anos.
+e) valor do salÃ¡rio.
+Para o cadastro, todos os campos deve ser validados, ou seja, para sexo, serÃ£o aceitos somente as opÃ§Ãµes â€˜mâ€™ e â€˜fâ€™; para cor de olhos, apenas as opÃ§Ãµes â€˜aâ€™, â€˜vâ€™, â€˜câ€™ e â€˜pâ€™; para cor dos cabelos, apenas as opÃ§Ãµes â€˜lâ€™, â€˜câ€™, â€˜pâ€™ e â€˜râ€™; para idade, apenas valores entre 10 e 100 anos, inclusive estes e para o salÃ¡rio, nÃ£o aceitar valores negativos.
+Para indicar fim dos habitantes pesquisados, o usuÃ¡rio fornecerÃ¡ um habitante fictÃ­cio com idade igual a â€“1.
+Ao final, o algoritmo deve determinar a porcentagem de indivÃ­duos do sexo feminino, com idade entre 18 e 35 anos e que tenham olhos castanhos e cabelos castanhos.*/
+#include <stdio.h>
+
+int main(){
+    char sexo, corOlhos, corCabelos, retorno;
+    int idade, salario, validacao;
+    float probab, cont, calcCont;
+
+    retorno = 'r';
+    probab = 0;
+    cont = 0;
+    validacao = 0;
+
+    while(retorno == 'r' || retorno == 'R'){
+        printf("Digite o sexo(M ou F): ");
+        scanf(" %c", &sexo);
+        printf("Digite a cor dos olhos:\nA. Azuis\nV. Verdes\nC. Castanhos\nP. Pretos\n");
+        scanf(" %c", &corOlhos);
+        printf("Digite a cor dos cabelos:\nL. Loiros\nC. Castanhos\nP. Pretos\nR. Ruivos\n");
+        scanf(" %c", &corCabelos);
+        printf("Digite a idade(entre 10 e 100): ");
+        scanf("%d", &idade);
+        printf("Digite o valor do salario: ");
+        scanf("%d", &salario);
+
+            if(sexo == 'f' || sexo == 'F' || sexo == 'M' || sexo == 'm')
+                validacao++;
+            if(corOlhos == 'A' || corOlhos == 'a' || corOlhos == 'V' || corOlhos == 'v' || corOlhos == 'C' || corOlhos == 'c' || corOlhos == 'P' || corOlhos == 'p')
+                validacao++;
+            if(corCabelos == 'L' || corCabelos == 'l' || corCabelos == 'C' || corCabelos == 'c' || corCabelos == 'P' || corCabelos == 'p' || corCabelos == 'R' || corCabelos == 'r')
+                validacao++;
+            if(idade >= 10 && idade <= 100)
+                validacao++;
+            if(salario >= 0)
+                validacao++;
+            
+            if(idade == -1){
+                printf("Encerrando programa...\n");
+                return 0;
+            }
+            
+            if(validacao == 5){
+                validacao = 0;
+                cont++;
+                if((sexo == 'F' || sexo == 'f') && (idade >= 18 && idade <=35) && (corOlhos == 'c' || corOlhos == 'C') && (corCabelos == 'c' || corCabelos == 'C')){
+                    probab++;
+                }
+                calcCont = ((probab/cont) * 100);
+
+                printf("Porcentagem de mulheres entre 18 e 35 anos com olhos e cabelos castanhos: %.1f%%", calcCont);
+
+                printf("\nDigite E para adicionar mais pessoas ou P para parar!\n");
+                scanf(" %c", &retorno);
+                if(retorno == 'E' || retorno == 'e')
+                    retorno = 'r';
+            } else{
+                validacao = 0;
+                printf("Erro!\n");
+                printf("Digite R para reiniciar!\n");
+                scanf(" %c", &retorno);
+            }
+    }
+}
+
+
+
+
+
+
+
